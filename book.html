@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="accessibility.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="icon" type="image/png" href="images/logo.png">
   <link rel="apple-touch-icon" href="images/logo.png">
   <link rel="manifest" href="favicon/site.webmanifest">
@@ -27,7 +28,7 @@
         <a href="about.html">About Us</a>
         <a href="team.html">Our Team</a>
         <a href="book.html" class="btn-book">Book Now</a>
-        <a href="tel:+13102081226" class="btn-book btn-outline-nav">Call Now</a>
+        <a href="tel:+13102081226" class="nav-call-link">Call Now</a>
       </div>
     </nav>
   </header>
@@ -70,17 +71,16 @@
           <input type="tel" id="book-phone" name="phone" required pattern="[\d\s\-\.\+\(\)]{10,}" title="Enter a valid phone number (at least 10 digits)" autocomplete="tel">
         </div>
         <div class="form-group">
-          <label for="book-email">Email</label>
-          <input type="email" id="book-email" name="email" required autocomplete="email">
+          <label for="book-email">Email <span class="optional">(optional)</span></label>
+          <input type="email" id="book-email" name="email" autocomplete="email">
         </div>
         <div class="form-group">
           <label for="book-service">Service</label>
           <select id="book-service" name="service" required>
             <option value="">Select a service</option>
-            <option value="Haircut">Haircut</option>
-            <option value="Color">Color</option>
-            <option value="Blowout">Blowout</option>
-            <option value="Highlights">Highlights</option>
+            <option value="Haircut">Haircut — $55</option>
+            <option value="Hair Color">Hair Color — $120</option>
+            <option value="Blowout">Blowout — $65</option>
           </select>
         </div>
         <div class="form-group">
@@ -98,6 +98,10 @@
             <input type="hidden" name="preferredDateTime" id="book-datetime-combined" value="">
             <div id="time-list-dropdown" class="time-list-dropdown" role="listbox" aria-label="Appointment times" hidden></div>
           </div>
+        </div>
+        <div class="form-group">
+          <label for="book-notes">Notes <span class="optional">(optional)</span></label>
+          <textarea id="book-notes" name="notes" rows="3" placeholder="Special requests or questions" class="booking-form-input-full"></textarea>
         </div>
         <div id="form-feedback" class="form-feedback" role="status" aria-live="polite"></div>
         <button type="submit" class="btn-hero btn-submit" id="form-submit-btn">Submit Request</button>
@@ -162,12 +166,12 @@
       }
 
       var timeSlots = [];
-      for (var h = 9; h <= 20; h++) {
-        for (var half = 0; half < 2; half++) {
-          if (h === 20 && half === 1) break;
-          var hour = h, min = half * 30;
-          var label = (hour === 12 ? 12 : hour % 12) + ':' + (min === 0 ? '00' : '30') + ' ' + (hour < 12 ? 'AM' : 'PM');
-          var value = (hour < 10 ? '0' : '') + hour + ':' + (min === 0 ? '00' : '30');
+      for (var h = 9; h <= 19; h++) {
+        for (var q = 0; q < 4; q++) {
+          var hour = h, min = q * 15;
+          if (h === 19 && min > 0) break;
+          var label = (hour === 12 ? 12 : hour % 12) + ':' + (min === 0 ? '00' : min) + ' ' + (hour < 12 ? 'AM' : 'PM');
+          var value = (hour < 10 ? '0' : '') + hour + ':' + (min === 0 ? '00' : min);
           timeSlots.push({ label: label, value: value });
         }
       }
@@ -211,8 +215,9 @@
       var service = params.get('service');
       var sel = document.getElementById('book-service');
       if (service && sel) {
-        var opt = Array.from(sel.options).find(function(o) { return o.value === service; });
-        if (opt) sel.value = service;
+        var decoded = decodeURIComponent(service.replace(/\+/g, ' '));
+        var opt = Array.from(sel.options).find(function(o) { return o.value === decoded || o.value === service; });
+        if (opt) sel.value = opt.value;
       }
 
       form.addEventListener('submit', function(e) {
@@ -257,7 +262,7 @@
           .then(function(res) {
             if (res.ok) {
               feedback.className = 'form-feedback form-feedback-success';
-              feedback.textContent = 'Your appointment request is confirmed. We\'ll call or text you shortly.';
+              feedback.textContent = 'Request received! We\'ll call or text shortly to confirm your appointment.';
               form.reset();
               timeInput.value = '';
               timeDisplay.textContent = 'Select time';

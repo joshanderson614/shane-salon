@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="accessibility.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="icon" type="image/png" href="images/logo.png">
   <link rel="apple-touch-icon" href="images/logo.png">
   <link rel="manifest" href="favicon/site.webmanifest">
@@ -28,7 +29,7 @@
         <a href="about.html">About Us</a>
         <a href="team.html">Our Team</a>
         <a href="book.html" class="btn-book">Book Now</a>
-        <a href="tel:+13102081226" class="btn-book btn-outline-nav">Call Now</a>
+        <a href="tel:+13102081226" class="nav-call-link">Call Now</a>
       </div>
     </nav>
   </header>
@@ -39,8 +40,12 @@
   </section>
 
   <main class="reviews-main" id="main-content">
+    <section class="cta-block" aria-labelledby="reviews-cta-top-heading">
+      <h2 id="reviews-cta-top-heading">Book your next visit</h2>
+      <a href="book.html" class="btn-hero">Book Now</a>
+    </section>
     <p class="reviews-google-cta">
-      <a href="https://www.google.com/maps/place/Shane+Salon/@34.0609201,-118.4442388,17z" target="_blank" rel="noopener" class="btn-primary">Read more reviews on Google</a>
+      <a href="https://www.google.com/maps/place/Shane+Salon/@34.0609201,-118.4442388,17z" target="_blank" rel="noopener" class="btn-primary btn-outline">Read more reviews on Google</a>
     </p>
     <div class="reviews-grid">
       <div class="review-card">
@@ -96,6 +101,10 @@
     <p style="text-align: center; margin-top: 1.5rem;">
       <a href="https://www.google.com/maps/place/Shane+Salon/@34.0609201,-118.4442388,17z" target="_blank" rel="noopener" class="btn-cta-link">See all 11 reviews on Google</a>
     </p>
+    <section class="cta-block" aria-labelledby="reviews-cta-bottom-heading">
+      <h2 id="reviews-cta-bottom-heading">Ready to book?</h2>
+      <a href="book.html" class="btn-hero">Book Now</a>
+    </section>
   </main>
 
   <footer class="footer" id="contact">

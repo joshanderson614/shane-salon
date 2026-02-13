@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="accessibility.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="icon" type="image/png" href="images/logo.png">
   <link rel="apple-touch-icon" href="images/logo.png">
   <link rel="manifest" href="favicon/site.webmanifest">
@@ -28,7 +29,7 @@
         <a href="about.html">About Us</a>
         <a href="team.html">Our Team</a>
         <a href="book.html" class="btn-book">Book Now</a>
-        <a href="tel:+13102081226" class="btn-book btn-outline-nav">Call Now</a>
+        <a href="tel:+13102081226" class="nav-call-link">Call Now</a>
       </div>
     </nav>
   </header>
@@ -53,52 +54,11 @@
       <p>We specialize in haircuts, color, highlights, and blowouts. Our team has an eye for what suits you—natural, flattering color and styles that work for your life. Plus, we offer free parking validation and a convenient Westwood location.</p>
     </section>
 
-    <section class="details-section">
-      <h2 class="section-title">Details & Amenities</h2>
-      <p style="margin-bottom: 1rem;">Everything you need to know before you visit.</p>
-      <div class="details-grid">
-        <div>
-          <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Accessibility</h3>
-          <ul class="details-list">
-            <li>Wheelchair accessible entrance</li>
-            <li>Wheelchair accessible parking lot</li>
-            <li>Wheelchair accessible restroom</li>
-          </ul>
-        </div>
-        <div>
-          <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Amenities</h3>
-          <ul class="details-list">
-            <li>Restroom</li>
-          </ul>
-        </div>
-        <div>
-          <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Planning</h3>
-          <ul class="details-list">
-            <li>Appointment required</li>
-            <li>Appointments recommended</li>
-          </ul>
-        </div>
-        <div>
-          <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Recycling</h3>
-          <ul class="details-list">
-            <li>Plastic bottles</li>
-          </ul>
-        </div>
-        <div>
-          <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Payments Accepted</h3>
-          <ul class="details-list">
-            <li>Checks</li>
-            <li>Debit cards</li>
-            <li>Credit cards</li>
-            <li>NFC mobile payments</li>
-          </ul>
-        </div>
-        <div>
-          <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Children</h3>
-          <ul class="details-list">
-            <li>Good for kids</li>
-          </ul>
-        </div>
+    <section class="visit-info-strip" aria-labelledby="about-visit-heading">
+      <h2 class="section-title" id="about-visit-heading">Visit Info</h2>
+      <p style="text-align: center; margin: 0 0 1rem; font-size: 0.95rem; color: var(--color-text-secondary);">Appointments recommended · Wheelchair accessible · Credit cards accepted</p>
+      <div class="visit-cta">
+        <a href="book.html" class="btn-hero">Book Now</a>
       </div>
     </section>
 

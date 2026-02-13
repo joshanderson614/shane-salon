@@ -18,6 +18,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="icon" type="image/png" href="images/logo.png">
   <link rel="apple-touch-icon" href="images/logo.png">
   <link rel="manifest" href="favicon/site.webmanifest">
@@ -56,7 +57,7 @@
         <a href="about.html">About Us</a>
         <a href="team.html">Our Team</a>
         <a href="book.html" class="btn-book">Book Now</a>
-        <a href="tel:+13102081226" class="btn-book btn-outline-nav">Call Now</a>
+        <a href="tel:+13102081226" class="nav-call-link">Call Now</a>
       </div>
     </nav>
   </header>
@@ -130,28 +131,34 @@
     <section class="popular-services-section">
       <h2 class="section-title">Popular Services</h2>
       <div class="popular-services-grid">
-        <a href="services.html#haircuts" class="popular-service-card" style="text-decoration:none;color:inherit;">
+        <a href="book.html?service=Haircut" class="popular-service-card" style="text-decoration:none;color:inherit;">
           <div class="popular-service-img" style="background-image: url('images/popular-haircut.png');" role="img" aria-label="Haircut — client receiving a cut"></div>
           <div class="popular-service-content">
             <h3>Haircut</h3>
-            <p>Precision cuts for every style</p>
+            <p><strong>$55</strong> — Precision cuts for every style</p>
           </div>
         </a>
-        <a href="services.html#color" class="popular-service-card" style="text-decoration:none;color:inherit;">
-          <div class="popular-service-img" style="background-image: url('images/popular-highlights.png');" role="img" aria-label="Color & Highlights"></div>
+        <a href="book.html?service=Hair%20Color" class="popular-service-card" style="text-decoration:none;color:inherit;">
+          <div class="popular-service-img" style="background-image: url('images/popular-highlights.png');" role="img" aria-label="Hair Color"></div>
           <div class="popular-service-content">
-            <h3>Color & Highlights</h3>
-            <p>Natural, flattering results</p>
+            <h3>Hair Color</h3>
+            <p><strong>$120</strong> — Natural, flattering results</p>
           </div>
         </a>
-        <a href="services.html#blowouts" class="popular-service-card" style="text-decoration:none;color:inherit;">
+        <a href="book.html?service=Blowout" class="popular-service-card" style="text-decoration:none;color:inherit;">
           <div class="popular-service-img" style="background-image: url('images/popular-blowout.png');" role="img" aria-label="Blowout"></div>
           <div class="popular-service-content">
-            <h3>Blowouts</h3>
-            <p>Lasting, beautiful styles</p>
+            <h3>Blowout</h3>
+            <p><strong>$65</strong> — Lasting, beautiful styles</p>
           </div>
         </a>
       </div>
+    </section>
+
+    <section class="cta-block" aria-labelledby="cta-ready-heading">
+      <h2 id="cta-ready-heading">Ready to book?</h2>
+      <p>Request an appointment in under a minute.</p>
+      <a href="book.html" class="btn-hero">Book Now</a>
     </section>
 
     <section class="reviews-preview-section">
@@ -176,43 +183,20 @@
       </div>
     </section>
 
-    <section class="details-section">
-      <h2 class="section-title">Details & Amenities</h2>
-      <p style="margin-bottom: 0.5rem;">We're committed to making every visit comfortable and convenient. <strong>Hours:</strong> Monday–Friday 10AM–7PM, Saturday 9AM–7PM, Sunday Closed.</p>
-      <div class="details-grid">
-        <div>
-          <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Accessibility</h3>
-          <ul class="details-list">
-            <li>Wheelchair accessible entrance</li>
-            <li>Wheelchair accessible parking lot</li>
-            <li>Wheelchair accessible restroom</li>
-          </ul>
-        </div>
-        <div>
-          <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Planning</h3>
-          <ul class="details-list">
-            <li>Appointment required</li>
-            <li>Appointments recommended</li>
-          </ul>
-        </div>
-        <div>
-          <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Payments</h3>
-          <ul class="details-list">
-            <li>Credit cards</li>
-            <li>Debit cards</li>
-            <li>Checks</li>
-            <li>NFC mobile payments</li>
-          </ul>
-        </div>
-        <div>
-          <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">More</h3>
-          <ul class="details-list">
-            <li>Restroom</li>
-            <li>Good for kids</li>
-            <li>Plastic bottles recycled</li>
-          </ul>
-        </div>
-      </div>
+    <section class="cta-block" aria-labelledby="cta-love-heading">
+      <h2 id="cta-love-heading">Love what you&rsquo;re seeing?</h2>
+      <a href="book.html" class="btn-hero">Book Now</a>
+    </section>
+
+    <section class="visit-info-strip" aria-labelledby="visit-info-heading">
+      <h2 class="section-title" id="visit-info-heading">Visit Info</h2>
+      <ul>
+        <li>Appointments recommended</li>
+        <li>Wheelchair accessible</li>
+        <li>Restroom available</li>
+        <li>Parking nearby</li>
+        <li>Credit cards accepted</li>
+      </ul>
     </section>
   </main>
 

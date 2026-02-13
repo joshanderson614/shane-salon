@@ -176,14 +176,18 @@ img {
   box-shadow: 0 0 0 3px rgba(255,255,255,0.5), 0 0 0 4px var(--color-primary);
 }
 
-/* Secondary nav CTA: Call Now (outline) */
-.nav-links a.btn-book.btn-outline-nav {
-  background: transparent;
-  color: var(--color-primary) !important;
-  border: 2px solid var(--color-primary);
+/* Secondary nav: Call Now = simple text link (no competing with Book Now) */
+.nav-links a.nav-call-link {
+  background: none;
+  color: var(--color-text-muted) !important;
+  font-weight: 500;
+  padding: 0.5rem 0.75rem;
+  border: none;
+  box-shadow: none;
 }
-.nav-links a.btn-book.btn-outline-nav:hover {
-  background: rgba(26, 53, 96, 0.08);
+.nav-links a.nav-call-link:hover {
+  color: var(--color-primary) !important;
+  background: transparent;
 }
 
 /* Hero */
@@ -357,6 +361,69 @@ img {
 .btn-cta-link:hover {
   background: rgba(26, 53, 96, 0.14);
   color: var(--color-primary-dark) !important;
+}
+
+/* Reusable Book Now CTA blocks */
+.cta-block {
+  text-align: center;
+  padding: 2rem 1.5rem;
+  max-width: var(--container-max);
+  margin: 0 auto;
+}
+.cta-block h2 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+.cta-block p {
+  color: var(--color-text-muted);
+  margin-bottom: 1.25rem;
+  font-size: 1rem;
+}
+.cta-block .btn-hero {
+  min-height: 48px;
+  padding: 0.75rem 1.75rem;
+}
+
+/* Compact Visit Info strip (home + about) */
+.visit-info-strip {
+  padding: 1.5rem 1.5rem;
+  background: var(--color-bg-alt);
+  max-width: var(--container-max);
+  margin: 0 auto;
+}
+.visit-info-strip h2.section-title {
+  margin-bottom: 0.75rem;
+}
+.visit-info-strip ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+.visit-info-strip li {
+  font-size: 0.95rem;
+  color: var(--color-text-secondary);
+}
+.visit-info-strip li::before {
+  content: '✓ ';
+  color: var(--color-primary);
+  font-weight: 600;
+  margin-right: 0.25rem;
+}
+.visit-info-strip .visit-cta {
+  text-align: center;
+  margin-top: 1rem;
+}
+@media (max-width: 768px) {
+  .visit-info-strip ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
 }
 
 .btn-cta-link:focus-visible {
@@ -929,9 +996,12 @@ h2.section-title::after {
 }
 
 .booking-form input,
-.booking-form select {
+.booking-form select,
+.booking-form textarea {
   font-family: var(--font-body);
   width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
   padding: 0.75rem 1rem;
   font-size: var(--text-body);
   border: 1px solid rgba(26, 53, 96, 0.22);
@@ -940,10 +1010,23 @@ h2.section-title::after {
   transition: border-color var(--transition), box-shadow var(--transition);
 }
 
+.booking-form textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.booking-form label .optional {
+  font-weight: 400;
+  color: var(--color-text-muted);
+  font-size: 0.9em;
+}
+
 .booking-form input:focus,
 .booking-form select:focus,
+.booking-form textarea:focus,
 .booking-form input:focus-visible,
-.booking-form select:focus-visible {
+.booking-form select:focus-visible,
+.booking-form textarea:focus-visible {
   outline: none;
   border-color: var(--color-primary);
   box-shadow: 0 0 0 3px rgba(26, 53, 96, 0.12);
