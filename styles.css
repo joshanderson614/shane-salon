@@ -1380,6 +1380,21 @@ h2.section-title::after {
   .details-list { margin-left: 0; }
   .map-container { height: 280px; }
   .contact-btn { min-width: 100%; }
+
+  /* Book page: date field same width/height as other inputs on mobile */
+  .booking-form input[type="date"],
+  .booking-form .booking-form-input-date {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    padding: 0.75rem 1rem;
+    min-height: 48px;
+    border-radius: var(--radius-md);
+  }
+  .booking-form .form-group {
+    max-width: 100%;
+  }
 }
 
 @media (max-width: 900px) and (min-width: 769px) {
