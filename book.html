@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Appointment | Shane Salon – Westwood, LA | Call (310) 208-1226</title>
+  <meta name="description" content="Book your appointment at Shane Salon. Call (310) 208-1226, text, or request online. 1080 Glendon Ave, Westwood, Los Angeles.">
+  <meta property="og:title" content="Book Appointment | Shane Salon">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="accessibility.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="images/logo.png">
+  <link rel="apple-touch-icon" href="images/logo.png">
+  <link rel="manifest" href="favicon/site.webmanifest">
+</head>
+<body class="booking-page">
+  <header class="header">
+    <nav class="nav">
+      <a href="index.html" class="logo-link">
+        <img src="images/logo.png" alt="Shane Salon" class="logo-img" width="200" height="80" loading="eager">
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="reviews.html">Reviews</a>
+        <a href="about.html">About Us</a>
+        <a href="team.html">Our Team</a>
+        <a href="book.html" class="btn-book">Book Now</a>
+        <a href="tel:+13102081226" class="btn-book btn-outline-nav">Call Now</a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="services-hero">
+    <h1>Book Your Appointment</h1>
+    <p style="margin-top: 0.5rem;">Call now, text, or fill out the form below</p>
+  </section>
+
+  <main id="main-content">
+    <div class="booking-methods cta-pair">
+      <a href="tel:+13102081226" class="btn-hero btn-outline" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Call (310) 208-1226
+      </a>
+      <a href="https://www.google.com/maps/dir//1080+Glendon+Ave,+Los+Angeles,+CA+90024" target="_blank" rel="noopener" class="btn-hero btn-outline" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Get Directions
+      </a>
+      <a href="sms:+13102081226" class="btn-hero btn-outline btn-text-us" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        Text Us
+      </a>
+    </div>
+
+    <h2 class="section-title">Request an Appointment</h2>
+    <div class="booking-form-container">
+      <form class="booking-form" name="appointment" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/">
+        <input type="hidden" name="form-name" value="appointment" />
+        <p style="display:none;">
+          <label>Don't fill this out: <input id="bot-field" name="bot-field" /></label>
+        </p>
+        <input type="hidden" name="sourcePage" id="form-source-page" value="" />
+        <div class="form-group">
+          <label for="book-name">Name</label>
+          <input type="text" id="book-name" name="name" required autocomplete="name">
+        </div>
+        <div class="form-group">
+          <label for="book-phone">Phone</label>
+          <input type="tel" id="book-phone" name="phone" required pattern="[\d\s\-\.\+\(\)]{10,}" title="Enter a valid phone number (at least 10 digits)" autocomplete="tel">
+        </div>
+        <div class="form-group">
+          <label for="book-email">Email</label>
+          <input type="email" id="book-email" name="email" required autocomplete="email">
+        </div>
+        <div class="form-group">
+          <label for="book-service">Service</label>
+          <select id="book-service" name="service" required>
+            <option value="">Select a service</option>
+            <option value="Haircut">Haircut</option>
+            <option value="Color">Color</option>
+            <option value="Blowout">Blowout</option>
+            <option value="Highlights">Highlights</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="book-date">Date</label>
+          <input type="date" id="book-date" name="preferredDate" required min="" autocomplete="off" class="booking-form-input-date">
+        </div>
+        <div class="form-group">
+          <label for="book-time-trigger">Time</label>
+          <div class="time-dropdown-wrap">
+            <button type="button" id="book-time-trigger" class="date-time-trigger" aria-haspopup="true" aria-expanded="false" aria-label="Choose time">
+              <span id="book-time-display">Select time</span>
+              <span class="dropdown-arrow" aria-hidden="true">▼</span>
+            </button>
+            <input type="hidden" id="book-time" name="preferredTime" value="">
+            <input type="hidden" name="preferredDateTime" id="book-datetime-combined" value="">
+            <div id="time-list-dropdown" class="time-list-dropdown" role="listbox" aria-label="Appointment times" hidden></div>
+          </div>
+        </div>
+        <div id="form-feedback" class="form-feedback" role="status" aria-live="polite"></div>
+        <button type="submit" class="btn-hero btn-submit" id="form-submit-btn">Submit Request</button>
+      </form>
+    </div>
+
+    <p style="margin-top: 2rem; color: var(--color-text-muted);">We&rsquo;ll call or text to confirm your appointment.</p>
+    <p><strong>Phone:</strong> <a href="tel:+13102081226">(310) 208-1226</a></p>
+    <p><strong>Address:</strong> 1080 Glendon Ave, Los Angeles, CA 90024</p>
+    <p><strong>Hours:</strong> Monday–Friday 10AM–7PM, Saturday 9AM–7PM, Sunday Closed</p>
+    <p><a href="https://www.google.com/maps/dir//1080+Glendon+Ave,+Los+Angeles,+CA+90024" target="_blank" rel="noopener">Get directions</a></p>
+    <p>Free parking validation available.</p>
+  </main>
+
+  <footer class="footer" id="contact">
+    <div class="footer-nap">
+      <span class="footer-nap-name">Shane Salon</span>
+      <span class="footer-nap-line2">1080 Glendon Ave, Los Angeles, CA 90024 | <a href="tel:+13102081226">(310) 208-1226</a></span>
+    </div>
+    <div class="footer-grid">
+      <div class="footer-contact">
+        <h3>Contact</h3>
+        <div class="contact-buttons">
+          <a href="book.html" class="contact-btn contact-btn-primary">Book Now</a>
+          <a href="tel:+13102081226" class="contact-btn">Call (310) 208-1226</a>
+          <a href="https://www.google.com/maps/dir//1080+Glendon+Ave,+Los+Angeles,+CA+90024" target="_blank" rel="noopener" class="contact-btn">Get Directions</a>
+          <a href="sms:+13102081226" class="contact-btn">Message</a>
+        </div>
+        <div class="footer-rating"><span class="footer-rating-stars">★★★★★</span> 5.0/5 on Google</div>
+      </div>
+      <div class="footer-location">
+        <h3>Location</h3>
+        <div class="map-container">
+          <iframe src="https://maps.google.com/maps?q=1080+Glendon+Ave,+Los+Angeles,+CA+90024&t=&z=15&ie=UTF8&iwloc=&output=embed" allowfullscreen="" loading="lazy" title="Map to Shane Salon"></iframe>
+        </div>
+        <a href="https://www.google.com/maps/place/Shane+Salon/@34.0609201,-118.4442388,17z" target="_blank" rel="noopener">1080 Glendon Ave, Los Angeles, CA</a>
+      </div>
+      <div class="footer-hours">
+        <h3>Hours</h3>
+        <ul>
+          <li><strong>Monday–Friday:</strong> 10AM – 7PM</li>
+          <li><strong>Saturday:</strong> 9AM – 7PM</li>
+          <li><strong>Sunday:</strong> Closed</li>
+        </ul>
+      </div>
+    </div>
+    <p class="footer-copy">&copy; Shane Salon. Westwood, Los Angeles.</p>
+  </footer>
+
+  <script src="transitions.js" defer></script>
+  <script>
+    (function() {
+      var form = document.querySelector('.booking-form');
+      var feedback = document.getElementById('form-feedback');
+      var submitBtn = document.getElementById('form-submit-btn');
+      var dateInput = document.getElementById('book-date');
+
+      if (dateInput) {
+        var today = new Date();
+        var y = today.getFullYear(), m = today.getMonth() + 1, d = today.getDate();
+        dateInput.min = y + '-' + (m < 10 ? '0' + m : m) + '-' + (d < 10 ? '0' + d : d);
+      }
+
+      var timeSlots = [];
+      for (var h = 9; h <= 20; h++) {
+        for (var half = 0; half < 2; half++) {
+          if (h === 20 && half === 1) break;
+          var hour = h, min = half * 30;
+          var label = (hour === 12 ? 12 : hour % 12) + ':' + (min === 0 ? '00' : '30') + ' ' + (hour < 12 ? 'AM' : 'PM');
+          var value = (hour < 10 ? '0' : '') + hour + ':' + (min === 0 ? '00' : '30');
+          timeSlots.push({ label: label, value: value });
+        }
+      }
+      var timeTrigger = document.getElementById('book-time-trigger');
+      var timeDisplay = document.getElementById('book-time-display');
+      var timeInput = document.getElementById('book-time');
+      var timeListDropdown = document.getElementById('time-list-dropdown');
+      timeSlots.forEach(function(slot) {
+        var opt = document.createElement('button');
+        opt.type = 'button';
+        opt.role = 'option';
+        opt.className = 'time-option';
+        opt.textContent = slot.label;
+        opt.dataset.value = slot.value;
+        opt.addEventListener('click', function() {
+          timeInput.value = slot.value;
+          timeDisplay.textContent = slot.label;
+          timeListDropdown.setAttribute('hidden', '');
+          timeTrigger.setAttribute('aria-expanded', 'false');
+        });
+        timeListDropdown.appendChild(opt);
+      });
+      timeTrigger.addEventListener('click', function() {
+        var open = timeListDropdown.getAttribute('hidden') == null;
+        if (open) {
+          timeListDropdown.setAttribute('hidden', '');
+          timeTrigger.setAttribute('aria-expanded', 'false');
+        } else {
+          timeListDropdown.removeAttribute('hidden');
+          timeTrigger.setAttribute('aria-expanded', 'true');
+        }
+      });
+      document.addEventListener('click', function(e) {
+        if (timeListDropdown.getAttribute('hidden') == null && !timeListDropdown.contains(e.target) && e.target !== timeTrigger) {
+          timeListDropdown.setAttribute('hidden', '');
+          timeTrigger.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      var params = new URLSearchParams(window.location.search);
+      var service = params.get('service');
+      var sel = document.getElementById('book-service');
+      if (service && sel) {
+        var opt = Array.from(sel.options).find(function(o) { return o.value === service; });
+        if (opt) sel.value = service;
+      }
+
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        if (submitBtn.disabled) return;
+
+        var dateVal = dateInput.value, timeVal = timeInput.value;
+        if (!dateVal || !timeVal) {
+          feedback.className = 'form-feedback form-feedback-error';
+          feedback.textContent = 'Please select both a date and a time.';
+          return;
+        }
+
+        var botField = document.getElementById('bot-field');
+        if (botField && botField.value) {
+          feedback.textContent = '';
+          form.reset();
+          timeInput.value = '';
+          timeDisplay.textContent = 'Select time';
+          return;
+        }
+
+        var sourceInput = document.getElementById('form-source-page');
+        if (sourceInput) sourceInput.value = window.location.href || '';
+
+        var combinedInput = document.getElementById('book-datetime-combined');
+        if (combinedInput) combinedInput.value = dateVal + ' ' + timeVal;
+
+        var formData = new FormData(form);
+        var body = new URLSearchParams(formData).toString();
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Submitting…';
+        feedback.className = 'form-feedback';
+        feedback.textContent = '';
+
+        fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: body
+        })
+          .then(function(res) {
+            if (res.ok) {
+              feedback.className = 'form-feedback form-feedback-success';
+              feedback.textContent = 'Your appointment request is confirmed. We\'ll call or text you shortly.';
+              form.reset();
+              timeInput.value = '';
+              timeDisplay.textContent = 'Select time';
+              if (sourceInput) sourceInput.value = '';
+            } else {
+              throw new Error('Submit failed');
+            }
+          })
+          .catch(function() {
+            feedback.className = 'form-feedback form-feedback-error';
+            feedback.textContent = 'Something went wrong — please try again or call/text us at (310) 208-1226.';
+          })
+          .finally(function() {
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Submit Request';
+          });
+      });
+    })();
+  </script>
+</body>
+</html>
